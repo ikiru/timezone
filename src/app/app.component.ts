@@ -6,19 +6,19 @@ import { Component } from "@angular/core";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  title = "US Time Zone Display";
-
+  time = new Date();
+  lastTimeZoneSelected = null;
 }
 
-function datetime()
-var time = new Date();
-if (){
-  this.time = time.setHours()
-} else if (){
-  this.time = time.setHours()+2
-  }else if (){
-  this.time =  time.setHours() +1
-  }else if (){
-  this.time =  time.setHours()-1
+getDateByzone(timezone) {
+  this.time = new Date();
+  if (timezone === 'MST') {
+    this.time.setHour(time.setHours() + 1);
+  } else if (timezone === 'CST') {
+    this.time.setHour(time.setHours() + 2);
+  } else if (timezone === 'EST') {
+    his.time.setHour(time.setHours() + 3);
+  }
+  this.lastTimeZoneSelected = timezone;
 }
 }
