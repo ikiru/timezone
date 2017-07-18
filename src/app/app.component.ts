@@ -8,17 +8,19 @@ import { Component } from "@angular/core";
 export class AppComponent {
   time = new Date();
   lastTimeZoneSelected = null;
-}
 
-getDateByzone(timezone) {
-  this.time = new Date();
-  if (timezone === 'MST') {
-    this.time.setHour(time.setHours() + 1);
-  } else if (timezone === 'CST') {
-    this.time.setHour(time.setHours() + 2);
-  } else if (timezone === 'EST') {
-    his.time.setHour(time.setHours() + 3);
+  getDateByzone(timezone) {
+    this.time = new Date();
+    if (timezone === "MST") {
+      this.time.setHours(this.time.getHours() - 1);
+    } else if (timezone === "CST") {
+      this.time.setHours(this.time.getHours());
+    } else if (timezone === "EST") {
+      this.time.setHours(this.time.getHours() + 1);
+    } else if (timezone === "PST") {
+      this.time.setHours(this.time.getHours() - 2);
+    }
+
+    this.lastTimeZoneSelected = timezone;
   }
-  this.lastTimeZoneSelected = timezone;
-}
 }
